@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor Business</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button id="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        <!-- <h2>Saya da sayar</h2> -->
+        <nav class="nav">
+            <a href="#" data-section="home">Home</a>
+            <!-- <a href="#" data-section="about">About</a>
+            <a href="#" data-section="services">Services</a>
+            <a href="#" data-section="portfolio">Products</a> -->
+            <a href="#" data-section="contact">Contact</a>
+            
+            
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content" id="main-content" role="main">
+        <!-- Dynamic content will appear here -->
+    </div>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cart-panel">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <form id="checkout-form" onsubmit="placeOrder(event)">
+            <h3>Checkout</h3>
+            <input type="text" id="name" placeholder="Full Name" required />
+            <input type="tel" id="phone" placeholder="Phone Number" required />
+            <input type="text" id="address" placeholder="Delivery Address" required />
+            <select id="delivery-method" required>
+                <option value="">Select Delivery Option</option>
+                <option value="standard">Standard (₦1,000)</option>
+                <option value="express">Express (₦2,500)</option>
+            </select>
+            <button type="submit">Place Order</button>
+            <button type="button" onclick="closeCart()">Close</button>
+        </form>
+    </div>
+
+    <!-- Cart Icon -->
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <!-- Product Button Container (Dynamic content) -->
+    <div id="product-button-container"></div>
+
+</body>
+</html>
